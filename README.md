@@ -47,7 +47,7 @@ SUBSYSTEM=="net",ACTION=="add",KERNEL=="usb0",RUN+="/sbin/ifconfig usb0 192.168.
 
 **Problems:**
 
-(1) The hardware MAC address is always randomized at boot and immediately passed to the connected PC. Even if I disconnect networking on the Radxa Zero 3W, change the hardware address and then re-enable networking, the connected PC will still use the original address.
+(1) The hardware MAC address is always randomized at boot and is immediately passed to the connected PC. Even if I disconnect networking on the Radxa Zero 3W, change the hardware address and then re-enable networking, the connected PC will still use the original randomized address.
 
 (2) g_ether is not used, but rather cdc_ether. This means no Windows support as a RNDIS device. This is a deal breaker for me.
 
