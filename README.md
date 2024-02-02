@@ -55,7 +55,7 @@ SUBSYSTEM=="net",ACTION=="add",KERNEL=="usb0",RUN+="/sbin/ifconfig usb0 192.168.
 
 (1) Run:
 
-```rsetup```
+```sudo rsetup```
 
 (2) Select ```Overlays``` **-->** ```Manage overlays``` **select** ```Enable I2C3-M0``` **and** ```Enable spidev on SPI3-M1 over CS0``` 
 
