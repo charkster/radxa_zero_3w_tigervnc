@@ -33,9 +33,38 @@ That's it, now you can just start the server with:
 
 ```tigervncserver```
 
-**Problems:**
+**Add service to systemctl**
 
-(1) Adding tigervncserver as a systemctl service (I was not able to get it working, please let me know if you do). I need to ssh into the board to manually start the VNC server.
+(1) Edit /etc/tigervnc/vncserver.users and add:
+
+``` :1=radxa```
+
+(2) Test service by running:
+
+``` 
+sudo systemctl start tigervncserver@:1.service
+systemctl status tigervncserver@:1.service
+```
+
+(3) Enable service by running:
+
+``` sudo systemctl enable tigervncserver@:1.service```
+
+**Connect using xtigervncviewer**
+
+(1) The following command line can be used:
+
+``` xtigervncviewer -SecurityTypes VncAuth,TLSVnc 192.168.0.71:1 &```
+
+(2) The TigerVnc GUI can be used, in Options -> Security tab, 
+
+Encryption 
+
+``` TLS with anonymous certificates```
+
+Authentication
+
+``` Standard VNC (insecure without encryption)```
 
 # Additional Steps for USB Gadget mode:
 
